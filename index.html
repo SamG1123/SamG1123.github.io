@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sameer Gupta — software engineer building useful systems with clarity and care." />
+    <title>Sameer Gupta — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Sameer Gupta home"><span class="brand-mark">SG</span><span>sameer<br />gupta</span></a>
+      <div class="side-meta">
+        <span class="eyebrow">Software engineer</span>
+        <span class="status"><i></i> open to opportunities</span>
+      </div>
+      <nav class="side-nav">
+        <a class="active" href="#top"><span>01</span>Home</a>
+        <a href="#work"><span>02</span>Selected work</a>
+        <a href="#about"><span>03</span>About me</a>
+        <a href="#contact"><span>04</span>Contact</a>
+      </nav>
+      <div class="side-bottom">
+        <div class="socials"><a href="https://github.com/SamG1123" target="_blank" rel="noreferrer">GH</a><a href="https://linkedin.com/in/sameer-gupta-him" target="_blank" rel="noreferrer">LI</a><button id="themeToggle" aria-label="Toggle color theme">◐</button></div>
+        <span class="location">Bangalore, India<br /><span id="clock">--:--</span> local time</span>
+      </div>
+    </aside>
+
+    <header class="mobile-header">
+      <a class="brand" href="#top"><span class="brand-mark">SG</span><span>sameer gupta</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">Menu <span>+</span></button>
+    </header>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#top">01 / Home</a><a href="#work">02 / Selected work</a><a href="#about">03 / About me</a><a href="#contact">04 / Contact</a>
+    </nav>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-kicker reveal"><span class="line"></span><span>01 — introduction</span></div>
+        <div class="hero-copy">
+          <p class="hero-overline reveal">I build things that make <em>complexity</em> feel simple.</p>
+          <h1 class="reveal">Software<br /><span>engineer</span> <b>+</b><br />product thinker.</h1>
+          <p class="hero-description reveal">I’m Sameer — an AI &amp; Data Science student who likes getting close to the problem. From a shell in C to an AI platform serving 7,475 questions, I turn curious ideas into dependable software.</p>
+          <div class="hero-actions reveal"><a class="button button-primary" href="#work">Explore my work <span>↗</span></a><a class="text-link" href="#contact">Let’s talk <span>↗</span></a></div>
+        </div>
+        <div class="hero-footer reveal"><span>Scroll to explore</span><span class="scroll-arrow">↓</span><span class="hero-note">Currently studying @ NMIT<br />and building what’s next.</span></div>
+      </section>
+
+      <section class="metrics section-pad">
+        <div class="metric"><strong>04</strong><span>selected<br />projects</span></div>
+        <div class="metric"><strong>7,475</strong><span>questions<br />served</span></div>
+        <div class="metric"><strong>130<span>+</span></strong><span>companies<br />indexed</span></div>
+        <div class="metric"><strong>1.4k<span>+</span></strong><span>people reached<br />through events</span></div>
+      </section>
+
+      <section class="work section-pad" id="work">
+        <div class="section-heading reveal"><div><span class="eyebrow">02 — selected work</span><h2>Ideas, made<br /><em>real.</em></h2></div><p>A few things I’ve designed, built, broken, and made better.</p></div>
+        <div class="project-list">
+          <article class="project featured reveal">
+            <div class="project-top"><span class="project-number">01</span><span class="project-type">Full-stack / AI</span><span class="project-year">2025</span></div>
+            <div class="project-content"><div><h3>Interview<br /><i>Prep AI</i></h3><p>A focused interview prep platform that turns a noisy question bank into a clear path forward.</p><a class="project-link" href="https://github.com/SamG1123" target="_blank" rel="noreferrer">View project <span>↗</span></a></div><div class="project-visual prep-visual"><span class="visual-label">7,475 questions</span><div class="terminal-card"><span class="dots">● ● ●</span><code>ask(“system design”);<br /><b>→ 3 ways to understand it</b></code></div></div></div>
+            <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Groq + Gemini</span><span>Redis</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><span class="project-number">02</span><span class="project-type">AI / RAG</span><span class="project-year">2024</span></div>
+            <div class="project-content"><div><h3>Menti<br /><i>Chat</i></h3><p>A grounded AI mentor that gives students useful answers, not confident guesses.</p><a class="project-link" href="https://github.com/SamG1123" target="_blank" rel="noreferrer">View project <span>↗</span></a></div><div class="project-visual mentor-visual"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="visual-label">grounded in context</span><strong>01<span>/</span>01</strong></div></div>
+            <div class="tags"><span>Python</span><span>Flask</span><span>Gemini API</span><span>RAG</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><span class="project-number">03</span><span class="project-type">Systems / C</span><span class="project-year">2024</span></div>
+            <div class="project-content"><div><h3>C-<br /><i>Shell</i></h3><p>Understanding the machine by building a Unix shell from scratch — one system call at a time.</p><a class="project-link" href="https://github.com/SamG1123" target="_blank" rel="noreferrer">View project <span>↗</span></a></div><div class="project-visual shell-visual"><span class="prompt">sameer@linux:~$</span><span class="command">./c-shell</span><span class="cursor"></span><span class="visual-label">10+ built-in commands</span></div></div>
+            <div class="tags"><span>C</span><span>Linux</span><span>System calls</span><span>REPL</span></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-top"><span class="project-number">04</span><span class="project-type">Data / Cloud</span><span class="project-year">2024</span></div>
+            <div class="project-content"><div><h3>Interview Data<br /><i>Pipeline</i></h3><p>An end-to-end ETL pipeline turning raw questions into analytics-ready data.</p><a class="project-link" href="https://github.com/SamG1123" target="_blank" rel="noreferrer">View project <span>↗</span></a></div><div class="project-visual data-visual"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="visual-label">6,653 records verified</span></div></div>
+            <div class="tags"><span>PySpark</span><span>AWS Glue</span><span>S3</span><span>Athena</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about section-pad" id="about">
+        <div class="section-heading reveal"><div><span class="eyebrow">03 — a little about me</span><h2>More than<br /><em>the code.</em></h2></div><p>Good engineering is technical. Great engineering is also curious, empathetic, and collaborative.</p></div>
+        <div class="about-grid">
+          <div class="about-statement reveal"><p>I care about the layer <em>between</em> a good idea and a useful product.</p><p class="small">My sweet spot is where backend systems, AI, and thoughtful interfaces meet. I’m happiest learning a new abstraction, tracing a hard bug, or helping a team move from “what if?” to “it works.”</p></div>
+          <div class="experience reveal"><div class="experience-row"><span>2025 — now</span><div><strong>Core Member, R&amp;D Club</strong><p>Nitte Meenakshi Institute of Technology</p></div></div><div class="experience-row"><span>2024 — 2025</span><div><strong>Vice Chair, ACM NMIT Chapter</strong><p>5+ technical events · 1,000+ attendees</p></div></div><div class="experience-row"><span>2023 — 2027</span><div><strong>B.E. Artificial Intelligence &amp; Data Science</strong><p>GPA 8.48 / 10 · Bangalore, India</p></div></div></div>
+        </div>
+        <div class="skills reveal"><span class="eyebrow">Tools I reach for</span><div class="skill-cloud"><span>Python</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>C / C++</span><span>Flask</span><span>PostgreSQL</span><span>Redis</span><span>AWS</span><span>Docker</span><span>Linux</span><span>Machine learning</span></div></div>
+      </section>
+
+      <section class="contact section-pad" id="contact">
+        <div class="contact-inner reveal"><span class="eyebrow">04 — let’s connect</span><h2>Have a problem<br />worth <em>solving?</em></h2><p>I’m always open to interesting conversations, ambitious projects, and good questions.</p><div class="contact-actions"><a class="button button-primary" href="mailto:sameerg2330@gmail.com">Start a conversation <span>↗</span></a><button class="copy-email" id="copyEmail">sameerg2330@gmail.com <span>copy</span></button></div></div>
+        <footer><span>© 2025 Sameer Gupta</span><span>Built with intention, not templates.</span><a href="#top">Back to top ↑</a></footer>
+      </section>
+    </main>
+    <div class="toast" id="toast">Email copied to clipboard</div>
+    <script src="script.js"></script>
+  </body>
+</html>
