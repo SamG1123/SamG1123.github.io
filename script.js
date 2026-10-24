@@ -56,6 +56,29 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
+const profileCard = document.querySelector('.profile-card');
+if (profileCard && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  profileCard.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    const bounds = profileCard.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
+    profileCard.style.setProperty('--pc-pointer-x', `${((x + 1) * 50).toFixed(1)}%`);
+    profileCard.style.setProperty('--pc-pointer-y', `${((y + 1) * 50).toFixed(1)}%`);
+    profileCard.style.setProperty('--pc-rotate-x', `${(-y * 10).toFixed(2)}deg`);
+    profileCard.style.setProperty('--pc-rotate-y', `${(x * 10).toFixed(2)}deg`);
+    profileCard.style.setProperty('--pc-active', '1');
+  });
+
+  profileCard.addEventListener('pointerleave', () => {
+    profileCard.style.setProperty('--pc-pointer-x', '50%');
+    profileCard.style.setProperty('--pc-pointer-y', '50%');
+    profileCard.style.setProperty('--pc-rotate-x', '0deg');
+    profileCard.style.setProperty('--pc-rotate-y', '0deg');
+    profileCard.style.setProperty('--pc-active', '0');
+  });
+}
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.side-nav a');
 window.addEventListener('scroll', () => {
