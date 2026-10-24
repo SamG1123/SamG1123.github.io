@@ -10,15 +10,33 @@
 }
 
 .about-grid {
-  grid-template-areas: "statement card" "experience card";
+  grid-template-areas: "statement card" "history card";
 }
 
 .about-statement {
   grid-area: statement;
 }
 
+.about-history {
+  grid-area: history;
+  display: grid;
+  align-content: start;
+  gap: 32px;
+}
+
+.history-heading {
+  margin: 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 500 10px var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.education,
 .experience {
-  grid-area: experience;
+  min-width: 0;
 }
 
 .about-grid > .profile-card {
@@ -238,7 +256,11 @@ body.light .profile-card__contact {
 
 @media (max-width: 800px) {
   .about-grid {
-    grid-template-areas: "statement" "experience" "card";
+    grid-template-areas: "statement" "history" "card";
+  }
+
+  .about-history {
+    gap: 28px;
   }
 
   .about-grid > .profile-card {
