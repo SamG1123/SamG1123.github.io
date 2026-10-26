@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore all of Sameer Gupta's public GitHub projects." />
+    <title>Projects — Sameer Gupta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="projects.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="index.html#top" aria-label="Sameer Gupta home"><span class="brand-mark">SG</span><span>sameer<br />gupta</span></a>
+      <div class="side-meta">
+        <span class="eyebrow">Software engineer</span>
+        <span class="status"><i></i> open to opportunities</span>
+      </div>
+      <nav class="side-nav">
+        <a href="index.html#top"><span>01</span>Home</a>
+        <a href="index.html#work"><span>02</span>Selected work</a>
+        <a class="active" href="#projects"><span>03</span>All projects</a>
+        <a href="index.html#about"><span>04</span>About me</a>
+        <a href="index.html#contact"><span>05</span>Contact</a>
+      </nav>
+      <div class="side-bottom">
+        <div class="socials"><a href="https://github.com/SamG1123" target="_blank" rel="noreferrer" aria-label="GitHub profile">GitHub ↗</a><button id="themeToggle" aria-label="Toggle color theme">◐</button></div>
+        <span class="location">Bangalore, India<br /><span id="clock">--:--</span> local time</span>
+      </div>
+    </aside>
+
+    <header class="mobile-header">
+      <a class="brand" href="index.html#top"><span class="brand-mark">SG</span><span>sameer gupta</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">Menu <span>+</span></button>
+    </header>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html#top">01 / Home</a><a href="index.html#work">02 / Selected work</a><a href="#projects">03 / All projects</a><a href="index.html#about">04 / About me</a><a href="index.html#contact">05 / Contact</a>
+    </nav>
+
+    <main id="top">
+      <section class="projects-section section-pad" id="projects">
+        <div class="projects-heading reveal">
+          <span class="eyebrow">03 — the full collection</span>
+          <h1>Built in<br /><em>public.</em></h1>
+          <p>Every public repository from my GitHub, in one place. New projects appear here automatically.</p>
+        </div>
+        <p class="projects-status" id="projectsStatus" role="status" aria-live="polite">Loading public repositories…</p>
+        <div class="project-grid" id="projectGrid" aria-busy="true"></div>
+      </section>
+      <footer class="projects-footer">
+        <span>Have something in mind?</span>
+        <a href="mailto:sameerg2330@gmail.com">Let’s talk ↗</a>
+        <button class="copy-email" id="copyEmail">sameerg2330@gmail.com <span>copy</span></button>
+      </footer>
+    </main>
+    <div class="toast" id="toast">Email copied to clipboard</div>
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+  </body>
+</html>
