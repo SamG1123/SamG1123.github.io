@@ -2,6 +2,19 @@
   background: #171817;
 }
 
+.mentor-visual {
+  isolation: isolate;
+}
+
+.mentor-visual::after {
+  content: none;
+}
+
+.menti-screenshot {
+  z-index: -1;
+  object-position: center;
+}
+
 .project-screenshot {
   position: absolute;
   inset: 0;
@@ -12,7 +25,7 @@
   transition: transform .5s ease;
 }
 
-.prep-visual:hover .project-screenshot {
+.project-visual:hover .project-screenshot {
   transform: scale(1.04);
 }
 
