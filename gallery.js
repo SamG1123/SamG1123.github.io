@@ -35,6 +35,74 @@ const events = [
       caption: 'The complete team of Augmentix Club at HackSurgeX.',
     }],
   },
+  {
+    title: 'NMIT Hacks 2024',
+    category: 'attended',
+    date: '2024-05-24',
+    location: 'NMIT Bengaluru',
+    summary: 'A 48 hour in person hackathon organized by CSE department of NMIT Bengaluru.',
+    story: 'NMIT Hacks 2024 is a national-level in-person 48-hour hackathon conducted by the CSE department of NITTE Meenakshi Institute of Technology, where tech enthusiasts are provided a platform to showcase their creativity and innovation to solve real-world problems.',
+    images: [{
+      src: 'public/events/nmithacks1.jpg',
+      alt: 'My hackathon team at NMIT Hacks 2024',
+      caption: 'My hackathon team at NMIT Hacks 2024.',
+    },
+    { src: 'public/events/nmithacks2.jpg',
+      alt: 'Mentoring session at NMIT Hacks 2024',
+      caption: 'Mentoring session at NMIT Hacks 2024.',
+    }],
+  },
+  {
+    title: 'Diamante Devhub Hackathon',
+    category: 'attended',
+    date: '2024-10-15',
+    location: 'NMIT Bengaluru',
+    summary: 'A 2 day event organized by Diamante Devhub at NMIT Bengaluru.',
+    story: 'The workshop introduced the fundamentals of Web3, explored the technical workflows behind blockchain systems, and covered how developers can begin building on the Diamante blockchain. It also highlighted opportunities within the ecosystem and the kinds of problems developers could work on. What we built was a KYC system using blockchain technology, which allows users to verify their identity in a secure and decentralized manner.',
+    images: [{
+      src: 'public/events/devhub1.jpg',
+      alt: 'Diamante Devhub Hackathon team',
+      caption: 'My hackathon team at Diamante Devhub Hackathon.',
+    },
+    {
+      src: 'public/events/devhub2.jpg',
+      alt: 'Diamante Devhub judges and participants',
+      caption: 'Diamante Devhub judges and participants at the event.',
+    },
+    {
+      src: 'public/events/devhub3.jpg',
+      alt: 'Laptop screen with code',
+      caption: 'Laptop screen showing the code we wrote for the KYC system during the Diamante Devhub Hackathon.',
+    }],
+  },
+  {
+    title: 'AI Unchained',
+    category: 'attended',
+    date: '2024-10-21',
+    location: 'NMIT Bengaluru',
+    summary: 'A 5-day seminar and workshop series hosted by Neural Nexus, the Artificial Intelligence and Machine Learning student club at NMIT ',
+    story: 'Throughout the 5 day seminar and workshop series, I learned about the fundamentals of Generative AI and its core concepts, including the architecture by diving deep into neural networks and machine learning algorithms. I also practically implemented a Generative AI model using tools like LangSmith in RAG workflows.',
+    images: [{
+      src: 'public/events/aiunchained1.jpg',
+      alt: 'Group selfie after concluding the AI Unchained seminar and workshop series',
+      caption: 'Group selfie after concluding the AI Unchained seminar and workshop series.',
+    },
+    {
+      src: 'public/events/aiunchained2.jpg',
+      alt: 'A front view of participants attending the workshop',
+      caption: 'A front view of participants attending the workshop during the AI Unchained seminar and workshop series.',
+    },
+    {
+      src: 'public/events/aiunchained3.jpg',
+      alt: 'Discussion with Deepak Chawla',
+      caption: 'Deepak Chawla discussing about architecture of Generative AI models.',
+    },
+    {
+      src: 'public/events/aiunchained4.jpg',
+      alt: 'Geotag photo of workshop',
+      caption: 'Geotag photo of the workshop during the AI Unchained seminar and workshop series.',
+    }],
+  }
 ];
 
 const galleryGrid = document.getElementById('galleryGrid');
