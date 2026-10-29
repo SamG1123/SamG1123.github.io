@@ -172,6 +172,7 @@ const createBounceCards = (images, {
     if (next !== hovered) {
       hovered = next;
       wake();
+      if (next >= 0) selectCard(next);
     }
   });
   root.addEventListener('pointerleave', () => {
