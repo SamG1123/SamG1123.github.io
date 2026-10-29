@@ -62,14 +62,15 @@
         <div class="gallery-empty" id="galleryEmpty" hidden>
           <span class="eyebrow">The next story starts here</span>
           <h2>Your event moments,<br /><em>in one place.</em></h2>
-          <p>Add your event details, photos, and personal notes to the <code>events</code> list in <code>gallery.js</code>. Choose <code>attended</code> or <code>conducted</code> to make them filterable.</p>
+          <p>Add event photos to <code>public/events/</code>, then list each image path, alt text, and caption in the event’s <code>images</code> array in <code>gallery.js</code>. Choose <code>attended</code> or <code>conducted</code> to make events filterable.</p>
         </div>
 
         <dialog class="event-dialog" id="eventDialog" aria-labelledby="dialogTitle">
           <form method="dialog" class="dialog-close-row">
             <button class="dialog-close" aria-label="Close event details">Close <span aria-hidden="true">×</span></button>
           </form>
-          <div class="dialog-visual" id="dialogVisual" hidden><img id="dialogImage" alt="" /></div>
+          <div class="dialog-gallery" id="dialogGallery"></div>
+          <p class="dialog-image-caption" id="dialogImageCaption" aria-live="polite"></p>
           <div class="dialog-content">
             <div class="event-meta"><span id="dialogCategory"></span><span id="dialogDate"></span></div>
             <h2 id="dialogTitle"></h2>
@@ -86,6 +87,7 @@
     </main>
     <div class="toast" id="toast">Email copied to clipboard</div>
     <script src="script.js"></script>
+    <script src="gallery-bounce.js"></script>
     <script src="gallery.js"></script>
   </body>
 </html>

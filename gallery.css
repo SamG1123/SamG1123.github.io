@@ -110,17 +110,69 @@
     var(--bg);
 }
 
-.event-card-visual img {
-  position: absolute;
-  inset: 0;
+.bounce-cards {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform .45s ease;
+  min-height: inherit;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.event-card-open:hover .event-card-visual img {
-  transform: scale(1.035);
+.bounce-cards__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 5px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 10px 28px -6px rgb(0 0 0 / 32%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: box-shadow .3s ease;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.bounce-cards__card[data-selected],
+.bounce-cards__card[data-active] {
+  box-shadow: 0 22px 44px -10px rgb(0 0 0 / 48%);
+}
+
+.bounce-cards__card--unavailable {
+  position: relative;
+  background: var(--accent-dark);
+}
+
+.bounce-cards__card--unavailable::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  content: "Image unavailable";
+  font: 10px var(--mono);
+}
+
+.bounce-cards__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bounce-cards__card:is(button) {
+  cursor: pointer;
+}
+
+.bounce-cards__card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .event-card-visual-fallback {
@@ -235,20 +287,35 @@
   color: var(--accent);
 }
 
-.dialog-visual {
-  height: min(42vh, 340px);
-  overflow: hidden;
-  background: var(--surface);
+.dialog-gallery {
+  min-height: 270px;
+  padding: 12px 20px 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+    var(--surface);
 }
 
-.dialog-visual[hidden] {
+.dialog-gallery:empty {
   display: none;
 }
 
-.dialog-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.dialog-bounce-cards {
+  height: 260px;
+  min-height: 0;
+}
+
+.dialog-image-caption {
+  min-height: 1.5em;
+  margin: 0;
+  padding: 0 28px 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.dialog-image-caption[hidden] {
+  display: none;
 }
 
 .dialog-content {
@@ -334,6 +401,16 @@
     min-height: 220px;
   }
 
+  .dialog-gallery {
+    min-height: 220px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .dialog-bounce-cards {
+    height: 210px;
+  }
+
   .gallery-footer {
     flex-wrap: wrap;
     padding-right: 7vw;
@@ -342,8 +419,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gallery-filter,
-  .event-card-visual img {
+  .gallery-filter {
     transition: none;
   }
 }

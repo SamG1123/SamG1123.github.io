@@ -1,8 +1,40 @@
 const events = [
-  // Add events here with category "attended" or "conducted".
-  // { title: 'Your event title', category: 'attended', date: 'YYYY-MM-DD', location: 'City',
-  //   image: 'public/events/photo.jpg', alt: 'Describe the event photo',
-  //   summary: 'A short introduction.', story: 'What happened and what you took away.' },
+  // Add photos to public/events/ and include each path, alt text, and caption.
+  // {
+  //   title: 'Your event title',
+  //   category: 'attended', // or 'conducted'
+  //   date: 'YYYY-MM-DD',
+  //   location: 'City',
+  //   summary: 'A short introduction.',
+  //   story: 'What happened and what you took away.',
+  //   images: [
+  //     { src: 'public/events/event-photo-1.jpg', alt: 'Describe the photo', caption: 'What is happening in this moment.' },
+  //     { src: 'public/events/event-photo-2.jpg', alt: 'Describe the second photo', caption: 'A different moment from the event.' },
+  //   ],
+  // },
+  {
+    title: 'HackSurgeX',
+    category: 'conducted',
+    date: '2026-04-17',
+    location: 'NMIT Bengaluru',
+    summary: 'A 36-hour hackathon organized by Augmentix Club at NMIT Bengaluru.',
+    story: 'HackSurgeX was a 36-hour hackathon organized by Augmentix Club at NMIT Bengaluru. The event brought together students from various colleges to collaborate, innovate, and create impactful solutions. Participants had the opportunity to work on real-world problems, network with industry experts, and showcase their skills. The event concluded with a presentation of projects and awards for the best innovations.',
+    images: [{
+      src: 'public/events/hacksurge1.jpg',
+      alt: 'Participants attending the inaugural session',
+      caption: 'Participants attending the inaugural session of HackSurgeX.',
+    },
+    {
+      src: 'public/events/hacksurge2.jpg',
+      alt: 'Augmetix Club core team members',
+      caption: 'Augmetix Club core team members at HackSurgeX.',
+    },
+    {
+      src: 'public/events/hacksurge3.jpg',
+      alt: 'Augmentix Club complete team',
+      caption: 'The complete team of Augmentix Club at HackSurgeX.',
+    }],
+  },
 ];
 
 const galleryGrid = document.getElementById('galleryGrid');
@@ -31,6 +63,13 @@ const formatEventDate = (date) => {
   return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(parsedDate);
 };
 
+const getEventImages = (event) => {
+  if (Array.isArray(event.images)) {
+    return event.images.filter((image) => image && typeof image.src === 'string' && image.src);
+  }
+  return event.image ? [{ src: event.image, alt: event.alt }] : [];
+};
+
 const openEvent = (event) => {
   document.getElementById('dialogCategory').textContent = categoryLabels[event.category];
   document.getElementById('dialogDate').textContent = formatEventDate(event.date);
@@ -45,15 +84,22 @@ const openEvent = (event) => {
     return element;
   }));
 
-  const image = document.getElementById('dialogImage');
-  const visual = document.getElementById('dialogVisual');
-  visual.hidden = !event.image;
-  if (event.image) {
-    image.src = event.image;
-    image.alt = event.alt || `Photo from ${event.title}`;
-  } else {
-    image.removeAttribute('src');
-    image.alt = '';
+  const images = getEventImages(event);
+  const dialogGallery = document.getElementById('dialogGallery');
+  const imageCaption = document.getElementById('dialogImageCaption');
+  const showCaption = (index) => {
+    imageCaption.textContent = images[index]?.caption || '';
+    imageCaption.hidden = !imageCaption.textContent;
+  };
+  dialogGallery.replaceChildren();
+  imageCaption.hidden = true;
+  if (images.length) {
+    dialogGallery.append(createBounceCards(images, {
+      className: 'dialog-bounce-cards',
+      onSelect: showCaption,
+      selectedIndex: 0,
+    }));
+    showCaption(0);
   }
   eventDialog.showModal();
 };
@@ -68,16 +114,9 @@ const createEventCard = (event) => {
 
   const visual = document.createElement('div');
   visual.className = 'event-card-visual';
-  if (event.image) {
-    const image = document.createElement('img');
-    image.src = event.image;
-    image.alt = event.alt || `Photo from ${event.title}`;
-    image.loading = 'lazy';
-    image.addEventListener('error', () => {
-      image.remove();
-      visual.classList.add('event-card-visual-fallback');
-    }, { once: true });
-    visual.append(image);
+  const images = getEventImages(event);
+  if (images.length) {
+    visual.append(createBounceCards(images, { className: 'event-bounce-cards', preview: true }));
   } else {
     visual.classList.add('event-card-visual-fallback');
     const fallback = document.createElement('span');
